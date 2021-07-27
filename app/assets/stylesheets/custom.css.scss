@@ -44,7 +44,7 @@ body {
 
 #page-content {
   flex: 1 0 auto;
-  background-color: lightgray;
+  background-color: #efefef;
 }
 
 .card{
@@ -53,4 +53,8 @@ body {
 
 .link-success{
   text-decoration: none;
+}
+
+.container form{
+  background-color: #fff;
 }

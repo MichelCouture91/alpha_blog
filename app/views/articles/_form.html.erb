@@ -7,16 +7,19 @@
     </ul>
 <% end %>
 
+<div class="container">
 <%= form_with(model: @article, local: true) do |f| %>
-    <p>
+    <div class="form-group p-3">
         <%= f.label :title %> <br/>
-        <%= f.text_field :title %>
-    </p>
-    <p>
+        <%= f.text_field :title, class: "form-control"%>
+    </div>
+    <div class="form-group p-3">
         <%= f.label :description %> <br/>
-        <%= f.text_area :description %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+        <%= f.text_area :description, class: "form-control"%>
+    </div>
+    <div class="form-group p-3">
+        <%= f.submit class: "btn btn-primary p-3"%>
+        <%= link_to 'Cancel', articles_path, class: "btn btn-primary p-3"%>
+    </div>
 <% end %>
+</div>
