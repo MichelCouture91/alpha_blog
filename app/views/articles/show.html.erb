@@ -6,15 +6,19 @@
             <div class="card-header font-italic">
                 by <%= @article.user.username %>
             </div>
-            <div class="card-body">
-                <div class="card-text text-left">
-                    <h5 class="card-title"><%= @article.title %></h5>
-                    <p class="card-text"><%= simple_format(@article.description) %> </p>
-                   <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-success" %>
-                    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
-                    <%= link_to 'Return to list', articles_path, class: "btn btn-outline-primary" %>
+                <div class="card-body">
+                    <div class="card-text text-left">
+                        <h5 class="card-title"><%= @article.title %></h5>
+                        <p class="card-text"><%= simple_format(@article.description) %> </p>
+                    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-success" %>
+                        <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
+                        <%= link_to 'Return to list', articles_path, class: "btn btn-outline-primary" %>
+                    </div>
                 </div>
-            </div>
+                <div class="card-footer text-muted">
+                    <small> Created <%= time_ago_in_words(@article.created_at) %> ago,
+                    Edited <%= time_ago_in_words(@article.updated_at) %> ago </small>
+                </div>
             </div>
         </div>
     </div>
