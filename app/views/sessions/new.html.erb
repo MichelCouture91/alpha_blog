@@ -1,0 +1,26 @@
+<div id="page-content">
+<h1 class="text-center mt-4">User Login</h1>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <%= form_with(scope: :session, url: login_path) do |f| %>
+                <div class="form-group p-3">
+                    <%= f.label :email %> <br/>
+                    <%= f.email_field :email, class: "form-control" , placeholder: "Enter your email"%>
+                </div>
+                <div class="form-group p-3">
+                    <%= f.label :password %> <br/>
+                    <%= f.password_field :password, class: "form-control", placeholder: "Enter your password"%>
+                </div>
+                <div class="form-group p-3">
+                    <%= f.submit "Login", class: "btn btn-primary p-3"%>
+                    <%= link_to 'Cancel', articles_path, class: "btn btn-primary p-3"%>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+</div>
