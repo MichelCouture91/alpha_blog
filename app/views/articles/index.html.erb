@@ -1,27 +1,6 @@
 <div id="page-content">
 <h1 class="text-center mt-4">Listing all articles</h1>
     <div class="container">
-        <% @articles.each do |art| %>
-            <div class="row justify-content-md-center">
-                <div class="col-8">
-                    <div class="card text-center shadow mb-5 bg-white rounded">
-                        <div class="card-header font-italic">
-                            by <%= art.user.username if art.user %>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><%= link_to art.title, article_path(art), class: "link-success" %></h5>
-                            <p class="card-text"><%= truncate(art.description, length: 100) %></p>
-                            <%= link_to "Show", article_path(art.id), class: "btn btn-outline-primary" %>
-                            <%= link_to "Edit", edit_article_path(art.id), class: "btn btn-outline-success" %>
-                            <%= link_to "Delete", article_path(art.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <small> Created <%= time_ago_in_words(art.created_at) %> ago,
-                            Edited <%= time_ago_in_words(art.updated_at) %> ago </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+      <%= render "articles/article", obj: @articles %>
     </div>
 </div>
