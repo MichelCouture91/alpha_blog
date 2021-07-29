@@ -1,0 +1,23 @@
+<div id="page-content">
+<h1 class="text-center mt-4">List of users</h1>
+    <div class="container">
+    <% @user.each do |art| %>
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                <div class="card text-center shadow mb-5 bg-white rounded">
+                    <div class="card-header font-italic">
+                        by <%= art.username %>
+                    </div>
+                    <div class="card-body">
+                        <%= link_to "View", user_path(art.id), class: "btn btn-outline-primary" %>
+                        <%= link_to "Edit", edit_user_path(art.id), class: "btn btn-outline-success" %>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small> Joined <%= time_ago_in_words(art.created_at) %> ago </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>
