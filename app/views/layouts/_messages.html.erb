@@ -1,6 +1,6 @@
 <div class="container">
     <% flash.each do |name, msg| %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="<%= name == "notice" ? "alert-success" : "alert-danger" %> alert alert-dismissible fade show" role="alert">
             <%= msg %>
             <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -8,3 +8,4 @@
             </div>
     <% end %>
 </div>
+
