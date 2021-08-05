@@ -1,0 +1,18 @@
+<h1 class="text-center mt-4">Category: <%= @category.name %></h1>
+
+<div class="container">
+    <div id="page-content">
+        <div class="flickr_pagination">
+            <div class="page_info">
+            <%= page_entries_info @category_articles %>
+            </div>
+            <%= will_paginate @category_articles, :container => false %>
+        </div>
+        <div class="text-center mt-4">
+            <% if logged_in? && @user == current_user.admin? %>
+                 <%= link_to "Edit category name", edit_category_path(@user), class: "btn btn-outline-info"%>
+            <% end %>
+        </div>
+        <%= render "articles/article", obj: @category_articles %>
+    </div>
+</div>
